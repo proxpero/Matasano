@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		525A61871C77A03900E51ABF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61861C77A03900E51ABF /* main.swift */; };
+		525A61991C77A0CC00E51ABF /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61901C77A0CC00E51ABF /* Conversions.swift */; };
+		525A619A1C77A0CC00E51ABF /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61911C77A0CC00E51ABF /* Crypto.swift */; };
+		525A619B1C77A0CC00E51ABF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61921C77A0CC00E51ABF /* Extensions.swift */; };
+		525A619C1C77A0CC00E51ABF /* HammingDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61931C77A0CC00E51ABF /* HammingDistance.swift */; };
+		525A619D1C77A0CC00E51ABF /* PlainTextScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61941C77A0CC00E51ABF /* PlainTextScore.swift */; };
+		525A619E1C77A0CC00E51ABF /* ProbableKeySize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61951C77A0CC00E51ABF /* ProbableKeySize.swift */; };
+		525A619F1C77A0CC00E51ABF /* RepeatingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61961C77A0CC00E51ABF /* RepeatingKey.swift */; };
+		525A61A01C77A0CC00E51ABF /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61971C77A0CC00E51ABF /* Tests.swift */; };
+		525A61A11C77A0CC00E51ABF /* XOR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61981C77A0CC00E51ABF /* XOR.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		525A61811C77A03900E51ABF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		525A61831C77A03900E51ABF /* Matasano */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Matasano; sourceTree = BUILT_PRODUCTS_DIR; };
+		525A61861C77A03900E51ABF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		525A618D1C77A0CC00E51ABF /* 4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 4.txt; sourceTree = "<group>"; };
+		525A618E1C77A0CC00E51ABF /* 6.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 6.txt; sourceTree = "<group>"; };
+		525A61901C77A0CC00E51ABF /* Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
+		525A61911C77A0CC00E51ABF /* Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		525A61921C77A0CC00E51ABF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		525A61931C77A0CC00E51ABF /* HammingDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HammingDistance.swift; sourceTree = "<group>"; };
+		525A61941C77A0CC00E51ABF /* PlainTextScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainTextScore.swift; sourceTree = "<group>"; };
+		525A61951C77A0CC00E51ABF /* ProbableKeySize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProbableKeySize.swift; sourceTree = "<group>"; };
+		525A61961C77A0CC00E51ABF /* RepeatingKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatingKey.swift; sourceTree = "<group>"; };
+		525A61971C77A0CC00E51ABF /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		525A61981C77A0CC00E51ABF /* XOR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XOR.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		525A61801C77A03900E51ABF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		525A617A1C77A03900E51ABF = {
+			isa = PBXGroup;
+			children = (
+				525A61851C77A03900E51ABF /* Matasano */,
+				525A61841C77A03900E51ABF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		525A61841C77A03900E51ABF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				525A61831C77A03900E51ABF /* Matasano */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		525A61851C77A03900E51ABF /* Matasano */ = {
+			isa = PBXGroup;
+			children = (
+				525A61861C77A03900E51ABF /* main.swift */,
+				525A61921C77A0CC00E51ABF /* Extensions.swift */,
+				525A61901C77A0CC00E51ABF /* Conversions.swift */,
+				525A61931C77A0CC00E51ABF /* HammingDistance.swift */,
+				525A61941C77A0CC00E51ABF /* PlainTextScore.swift */,
+				525A61951C77A0CC00E51ABF /* ProbableKeySize.swift */,
+				525A61961C77A0CC00E51ABF /* RepeatingKey.swift */,
+				525A61981C77A0CC00E51ABF /* XOR.swift */,
+				525A61911C77A0CC00E51ABF /* Crypto.swift */,
+				525A61971C77A0CC00E51ABF /* Tests.swift */,
+				525A618D1C77A0CC00E51ABF /* 4.txt */,
+				525A618E1C77A0CC00E51ABF /* 6.txt */,
+			);
+			path = Matasano;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		525A61821C77A03900E51ABF /* Matasano */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 525A618A1C77A03900E51ABF /* Build configuration list for PBXNativeTarget "Matasano" */;
+			buildPhases = (
+				525A617F1C77A03900E51ABF /* Sources */,
+				525A61801C77A03900E51ABF /* Frameworks */,
+				525A61811C77A03900E51ABF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Matasano;
+			productName = Matasano;
+			productReference = 525A61831C77A03900E51ABF /* Matasano */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		525A617B1C77A03900E51ABF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Todd Olsen";
+				TargetAttributes = {
+					525A61821C77A03900E51ABF = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 525A617E1C77A03900E51ABF /* Build configuration list for PBXProject "Matasano" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 525A617A1C77A03900E51ABF;
+			productRefGroup = 525A61841C77A03900E51ABF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				525A61821C77A03900E51ABF /* Matasano */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		525A617F1C77A03900E51ABF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				525A619A1C77A0CC00E51ABF /* Crypto.swift in Sources */,
+				525A61A01C77A0CC00E51ABF /* Tests.swift in Sources */,
+				525A61871C77A03900E51ABF /* main.swift in Sources */,
+				525A61991C77A0CC00E51ABF /* Conversions.swift in Sources */,
+				525A619E1C77A0CC00E51ABF /* ProbableKeySize.swift in Sources */,
+				525A61A11C77A0CC00E51ABF /* XOR.swift in Sources */,
+				525A619C1C77A0CC00E51ABF /* HammingDistance.swift in Sources */,
+				525A619F1C77A0CC00E51ABF /* RepeatingKey.swift in Sources */,
+				525A619D1C77A0CC00E51ABF /* PlainTextScore.swift in Sources */,
+				525A619B1C77A0CC00E51ABF /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		525A61881C77A03900E51ABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		525A61891C77A03900E51ABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		525A618B1C77A03900E51ABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		525A618C1C77A03900E51ABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		525A617E1C77A03900E51ABF /* Build configuration list for PBXProject "Matasano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				525A61881C77A03900E51ABF /* Debug */,
+				525A61891C77A03900E51ABF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		525A618A1C77A03900E51ABF /* Build configuration list for PBXNativeTarget "Matasano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				525A618B1C77A03900E51ABF /* Debug */,
+				525A618C1C77A03900E51ABF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 525A617B1C77A03900E51ABF /* Project object */;
+}
