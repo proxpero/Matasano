@@ -14,6 +14,12 @@ extension String {
         let content = try! NSString(contentsOfFile: filename, encoding: encoding)
         self = content as String
     }
+    
+    /// Where `self` is a valid hex string, returns `true` when a 16 byte block is repeated.
+//    var isECBEncrypted: Bool {
+//        
+//        
+//    }
 }
 
 extension CollectionType
@@ -26,7 +32,7 @@ extension CollectionType
     /// English. Returns the best candidate.
     ///
     /// Complexity: O(n^2)
-    func decryptHexBytes() -> [UInt8] {
+    func decryptXORdHexBytes() -> [UInt8] {
         
         var bestScore = -Double.infinity
         var best: [UInt8] = []
@@ -50,7 +56,25 @@ extension CollectionType
         }
         return candidates
     }
-    
+}
+
+extension CollectionType
+    where
+        Generator.Element == Array<UInt8>
+{
+    /// Where `self` is a collection of 16-byte blocks,
+    /// returns `true` iff any 16 byte block is repeated.
+    var isAESEncrypted: Bool {
+
+        var candidate = Array<Array<UInt8>>(self)
+        while candidate.startIndex != candidate.endIndex {
+            let b = candidate.removeFirst()
+            if (candidate.filter { $0 == b }).count > 1 {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 
@@ -77,6 +101,7 @@ extension CollectionType
         
         return blocks
     }
+
 }
 
 
@@ -96,8 +121,8 @@ func testTranspose() {
 
 extension CollectionType
     where
-    Index == Int,
-    SubSequence.Generator.Element == Generator.Element
+        Index == Int,
+        SubSequence.Generator.Element == Generator.Element
 {
     func blockify(length: Int) -> [[Generator.Element]] {
         var blocks: [[Generator.Element]] = []
@@ -108,6 +133,10 @@ extension CollectionType
         }
         return blocks
     }
+    
+    
+    
+    
 }
 
 

@@ -61,7 +61,7 @@ func testPlainTextScoring() {
     let encodingKey = UInt8(0xee)
     let cipher = plaintext.asciiToBytes^encodingKey
     
-    let decrypted = cipher.decryptHexBytes()
+    let decrypted = cipher.decryptXORdHexBytes()
     let key = UInt8((0x00...0xff).filter { decrypted^UInt8($0) == cipher }.first!)
     
     assert(encodingKey == key)

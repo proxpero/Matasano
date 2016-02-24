@@ -26,7 +26,6 @@ func testSets() {
     
     func testSet1() {
         
-        
         // MARK: Challenge 1
         //
         
@@ -66,10 +65,10 @@ func testSets() {
         func testChallenge3() {
             
             let challengeCipher = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736".hexToBytes
-            let decryptedChallenge = challengeCipher.decryptHexBytes()
+            let decryptedChallenge = challengeCipher.decryptXORdHexBytes()
             let challengeKey = UInt8((0x00...0xff).filter { decryptedChallenge^UInt8($0) == challengeCipher }.first!)
             
-            print("\(__FUNCTION__) passed: \(decryptedChallenge.asciiRepresentation), key: \(challengeKey)")
+            print("\(__FUNCTION__) passed with result:\n\n\(decryptedChallenge.asciiRepresentation), key: \(challengeKey)")
             
         }
         
@@ -101,7 +100,7 @@ func testSets() {
                 }
             }
             
-            print("\(__FUNCTION__) passed: \(best.asciiRepresentation)")
+            print("\(__FUNCTION__) passed with result:\n\n\(best.asciiRepresentation)")
         }
         
         
@@ -140,10 +139,45 @@ func testSets() {
 
             let ciphertext = String(filename: "6.txt").componentsSeparatedByString("\n").reduce("") { $0 + $1 }
             let result = ciphertext.base64ToBytes.decrypt(Encryption.RepeatingKeyXOR(key: nil))
-            print("\(__FUNCTION__) passed with result: \(result)")
+            print("\(__FUNCTION__) passed with result:\n\n\(result)")
             
         }
         
+        
+        // MARK: Challenge 7
+        // The Base64-encoded content in `7.txt` has been encrypted via AES-128 in ECB mode under the key
+        // `YELLOW SUBMARINE`. Decrypt it.
+        
+        func testChallenge7() {
+            
+            let ciphertext = String(filename: "7.txt").componentsSeparatedByString("\n").reduce("") { $0 + $1 }
+            let result = ciphertext.base64ToBytes.decrypt(Encryption.AES_128_ECB(key: "YELLOW SUBMARINE"))
+            print("\(__FUNCTION__) passed with result:\n\n\(result)")
+            
+        }
+        
+        // MARK: Challenge 8
+        // In `8.txt` are a bunch of hex-encoded ciphertexts. One of them has been encrypted with ECB.
+        // Detect it. Remember that the problem with ECB is that it is stateless and deterministic; 
+        // the same 16 byte plaintext block will always produce the same 16 byte ciphertext.
+        
+        func testChallenge8() {
+            
+            let ciphertext = String(filename: "8.txt").componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
+            let blocks = ciphertext.map { $0.hexToBytes.blockify(16) }
+            
+            var result: String? = nil
+            
+            for block in blocks {
+                if block.isAESEncrypted {
+                    result = block.flatMap { $0 }.hexRepresentation
+                }
+            }
+        
+            assert(result != nil)
+            print("\(__FUNCTION__) passed with result:\n\(result!)")
+            
+        }
         
         testChallenge1()
         testChallenge2()
@@ -151,10 +185,14 @@ func testSets() {
         testChallenge4()
         testChallenge5()
         testChallenge6()
+        testChallenge7()
+        testChallenge8()
     }
 
     testSet1()
+    
     print("\(__FUNCTION__) passed.")
+    
 }
 
 

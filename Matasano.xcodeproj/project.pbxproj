@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5237D4251C7D2844000763D7 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5237D4231C7D2844000763D7 /* libcrypto.a */; };
+		5237D4261C7D2844000763D7 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5237D4241C7D2844000763D7 /* libssl.a */; };
+		5237D4281C7DF1F5000763D7 /* 7.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5237D4271C7DE446000763D7 /* 7.txt */; };
+		5237D42A1C7E1083000763D7 /* 8.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5237D4291C7E107B000763D7 /* 8.txt */; };
 		525A61871C77A03900E51ABF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61861C77A03900E51ABF /* main.swift */; };
 		525A61991C77A0CC00E51ABF /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61901C77A0CC00E51ABF /* Conversions.swift */; };
 		525A619A1C77A0CC00E51ABF /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61911C77A0CC00E51ABF /* Crypto.swift */; };
@@ -28,6 +32,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				5237D42A1C7E1083000763D7 /* 8.txt in CopyFiles */,
+				5237D4281C7DF1F5000763D7 /* 7.txt in CopyFiles */,
 				525A61A31C77A1A500E51ABF /* 6.txt in CopyFiles */,
 				525A61A21C77A1A100E51ABF /* 4.txt in CopyFiles */,
 			);
@@ -36,6 +42,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5237D41D1C7D182F000763D7 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		5237D4231C7D2844000763D7 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = lib/libcrypto.a; sourceTree = "<group>"; };
+		5237D4241C7D2844000763D7 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = lib/libssl.a; sourceTree = "<group>"; };
+		5237D4271C7DE446000763D7 /* 7.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 7.txt; sourceTree = "<group>"; };
+		5237D4291C7E107B000763D7 /* 8.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 8.txt; sourceTree = "<group>"; };
 		525A61831C77A03900E51ABF /* Matasano */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Matasano; sourceTree = BUILT_PRODUCTS_DIR; };
 		525A61861C77A03900E51ABF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		525A618D1C77A0CC00E51ABF /* 4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 4.txt; sourceTree = "<group>"; };
@@ -56,16 +67,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5237D4261C7D2844000763D7 /* libssl.a in Frameworks */,
+				5237D4251C7D2844000763D7 /* libcrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5237D41E1C7D23B2000763D7 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				5237D4231C7D2844000763D7 /* libcrypto.a */,
+				5237D4241C7D2844000763D7 /* libssl.a */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		525A617A1C77A03900E51ABF = {
 			isa = PBXGroup;
 			children = (
 				525A61851C77A03900E51ABF /* Matasano */,
+				5237D41E1C7D23B2000763D7 /* Libraries */,
 				525A61841C77A03900E51ABF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,8 +114,11 @@
 				525A61981C77A0CC00E51ABF /* XOR.swift */,
 				525A61911C77A0CC00E51ABF /* Crypto.swift */,
 				525A61971C77A0CC00E51ABF /* Tests.swift */,
+				5237D41D1C7D182F000763D7 /* bridge.h */,
 				525A618D1C77A0CC00E51ABF /* 4.txt */,
 				525A618E1C77A0CC00E51ABF /* 6.txt */,
+				5237D4271C7DE446000763D7 /* 7.txt */,
+				5237D4291C7E107B000763D7 /* 8.txt */,
 			);
 			path = Matasano;
 			sourceTree = "<group>";
@@ -253,14 +279,28 @@
 		525A618B1C77A03900E51ABF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Matasano/bridge.h;
 			};
 			name = Debug;
 		};
 		525A618C1C77A03900E51ABF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Matasano/bridge.h;
 			};
 			name = Release;
 		};
