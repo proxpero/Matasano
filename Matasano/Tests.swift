@@ -164,11 +164,9 @@ func testSets() {
         func testChallenge8() {
             
             let ciphertext = String(filename: "8.txt").componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
-            let blocks = ciphertext.map { $0.hexToBytes.blockify(16) }
-            
             var result: String? = nil
             
-            for block in blocks {
+            for block in (ciphertext.map { $0.hexToBytes.blockify(16) }) {
                 if block.isAESEncrypted {
                     result = block.flatMap { $0 }.hexRepresentation
                 }
