@@ -6,7 +6,6 @@
 //  Copyright © 2016 Todd Olsen. All rights reserved.
 //
 
-let masks: [UInt8] = [0b00000001, 0b00000010, 0b00000100, 0b00001000, 0b00010000, 0b00100000, 0b01000000, 0b10000000]
 func hammingDistance(x: UInt8, _ y: UInt8) -> Int {
     // The hamming distance equals the number of ones in the
     // binary representation of the xor of the two bytes.
@@ -14,7 +13,7 @@ func hammingDistance(x: UInt8, _ y: UInt8) -> Int {
     // bits in `x` and `y` and xor's the two bits. If the 
     // result is larger than one, it is added to an array.
     // The count of the array is the hamming distance.
-    return masks.map { $0&x ^ $0&y }.filter { $0 > 0 }.count
+    return (0...7).map { 1 << $0 }.map { $0&x ^ $0&y }.filter { $0 > 0 }.count
 }
 
 func hammingDistance(x: [UInt8], _ y: [UInt8]) -> Int {
