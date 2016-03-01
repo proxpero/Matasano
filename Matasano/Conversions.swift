@@ -40,7 +40,7 @@ extension String {
     /// returns an array of bytes
     /// - precondition: `self` is base-64 text
     public var base64ToBytes: [UInt8] {
-        return characters.map { String($0) }.filter { $0 != "=" }.map { UInt8(base64Chars.indexOf($0)!) }.sixbitArrayToBytes
+        return characters.map { String($0) }.filter { $0 != "=" }.map { UInt8(base64Chars.indexOf($0)!) }.sextetArrayToBytes
     }
     
     public var asciiToBase64: String {
@@ -86,7 +86,7 @@ extension CollectionType where Generator.Element == UInt8, Index == Int {
     public var base64Representation: String
     {
         var output = ""
-        for sixbitInt in (self.bytesToSixbitArray.map { Int($0) }) {
+        for sixbitInt in (self.bytesToSextetArray.map { Int($0) }) {
             output += base64Chars[sixbitInt]
         }
         while output.characters.count % 4 != 0 { output += "=" }
@@ -94,7 +94,7 @@ extension CollectionType where Generator.Element == UInt8, Index == Int {
     }
 
     ///
-    private var bytesToSixbitArray: [UInt8] {
+    private var bytesToSextetArray: [UInt8] {
         
         var sixes = [UInt8]()
 
@@ -123,24 +123,18 @@ extension CollectionType where Generator.Element == UInt8, Index == Int {
         return sixes
     }
 
-    private var sixbitArrayToBytes: [UInt8] {
+    private var sextetArrayToBytes: [UInt8] {
         var bytes: [UInt8] = []
 
         for i in startIndex.stride(to: endIndex, by: 4) {
             
             bytes.append(self[i+0]<<2 | self[i+1]>>4)
             
-            guard i+2 < endIndex else {
-//                bytes.append(self[i+1]<<4)
-                return bytes
-            }
+                guard i+2 < endIndex else { return bytes }
             
             bytes.append(self[i+1]<<4 | self[i+2]>>2)
-    
-            guard i+3 < endIndex else {
-//                bytes.append(self[i+2]<<6)
-                return bytes
-            }
+            
+                guard i+3 < endIndex else { return bytes }
             
             bytes.append(self[i+2]<<6 | self[i+3]>>0)
         }
@@ -195,8 +189,8 @@ func testConversions() {
         let sixes: [UInt8] = [19, 22, 5, 46]
         let eights: [UInt8] = [77, 97, 110]
         
-        assert(sixes.sixbitArrayToBytes == eights)
-        assert(eights.bytesToSixbitArray == sixes)
+        assert(sixes.sextetArrayToBytes == eights)
+        assert(eights.bytesToSextetArray == sixes)
 
         let t1 = "Man"
         let e1 = "TWFu"
