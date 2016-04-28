@@ -66,8 +66,13 @@ extension CollectionType where Generator.Element == UInt8, Index == Int {
     /// return the ascii representation of `self`
     /// complexity: O(N)
     public var asciiRepresentation: String {
-        guard let result = String(bytes: self, encoding: NSUTF8StringEncoding) else { fatalError() }
-        return result
+        
+        if let result = String(bytes: self, encoding: NSUTF8StringEncoding) {
+            return result
+        }
+        
+        return String(bytes: self, encoding: NSUnicodeStringEncoding)!
+
     }
     
     /// returns the hexidecimal representation of `self`
@@ -158,7 +163,7 @@ func testConversions() {
         assert("t".unicodeScalarCodePoint == UInt32(116))
         assert("~".unicodeScalarCodePoint == UInt32(126))   // upper bound
         
-        print("\(__FUNCTION__) passed.")
+        print("\(#function) passed.")
     }
     
     func testAsciiConversions()
@@ -170,7 +175,7 @@ func testConversions() {
         assert(bytes.asciiRepresentation == text)
         assert(hobbes.asciiToBytes.asciiRepresentation == hobbes)
         
-        print("\(__FUNCTION__) passed.")
+        print("\(#function) passed.")
     }
     
     func testHexConversions()
@@ -181,7 +186,7 @@ func testConversions() {
         let t1      = "f79"
         assert(t1.hexToBytes.hexRepresentation == t1)
         
-        print("\(__FUNCTION__) passed.")
+        print("\(#function) passed.")
     }
     
     func testBase64Conversions()
@@ -302,7 +307,7 @@ func testConversions() {
         assert(input.hexToBytes.base64Representation == output)
         assert(input.hexToBase64 == output)
         
-        print("\(__FUNCTION__) passed.")
+        print("\(#function) passed.")
     }
 
     testUnicodeScalarCodePoint()
@@ -310,7 +315,7 @@ func testConversions() {
     testHexConversions()
     testBase64Conversions()
     
-    print("\(__FUNCTION__) passed.")
+    print("\(#function) passed.")
     
 }
 

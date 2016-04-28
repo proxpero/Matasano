@@ -10,7 +10,7 @@ import Foundation
 
 func testLibrary() {
 
-    print("Begin \(__FUNCTION__).")
+    print("Begin \(#function).")
     testConversions()
     testTranspose()
     testXorInfixes()
@@ -19,7 +19,7 @@ func testLibrary() {
     testHammingDistance()
     testBlockify()
     testCrypto()
-    print("\(__FUNCTION__) passed.\n")
+    print("\(#function) passed.\n")
 }
 
 func testSets() {
@@ -35,7 +35,7 @@ func testSets() {
             let output = "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t"
             assert(input.hexToBase64 == output)
             
-            print("\(__FUNCTION__) passed.")
+            print("\(#function) passed.")
             
         }
         
@@ -52,7 +52,7 @@ func testSets() {
             
             assert(b1 ^ b2 == r)
             
-            print("\(__FUNCTION__) passed.")
+            print("\(#function) passed.")
             
         }
         
@@ -68,7 +68,7 @@ func testSets() {
             let decryptedChallenge = challengeCipher.decryptXORdHexBytes()
             let challengeKey = UInt8((0x00...0xff).filter { decryptedChallenge^UInt8($0) == challengeCipher }.first!)
             
-            print("\(__FUNCTION__) passed with result:\n\n\(decryptedChallenge.asciiRepresentation), key: \(challengeKey)")
+            print("\(#function) passed with result:\n\n\(decryptedChallenge.asciiRepresentation), key: \(challengeKey)")
             
         }
         
@@ -100,7 +100,7 @@ func testSets() {
                 }
             }
             
-            print("\(__FUNCTION__) passed with result:\n\n\(best.asciiRepresentation)")
+            print("\(#function) passed with result:\n\n\(best.asciiRepresentation)")
         }
         
         
@@ -126,7 +126,7 @@ func testSets() {
             let e = verses.encrypt(Encryption.RepeatingKeyXOR(key: p2))
             assert(e == result.hexToBytes)
             
-            print("\(__FUNCTION__) passed.")
+            print("\(#function) passed.")
             
         }
         
@@ -139,7 +139,7 @@ func testSets() {
 
             let ciphertext = String(filename: "6.txt").componentsSeparatedByString("\n").reduce("") { $0 + $1 }
             let result = ciphertext.base64ToBytes.decrypt(Encryption.RepeatingKeyXOR(key: nil))
-            print("\(__FUNCTION__) passed with result:\n\n\(result)")
+            print("\(#function) passed with result:\n\n\(result)")
             
         }
         
@@ -152,7 +152,7 @@ func testSets() {
             
             let ciphertext = String(filename: "7.txt").componentsSeparatedByString("\n").reduce("") { $0 + $1 }
             let result = ciphertext.base64ToBytes.decrypt(Encryption.AES_128_ECB(key: "YELLOW SUBMARINE"))
-            print("\(__FUNCTION__) passed with result:\n\n\(result)")
+            print("\(#function) passed with result:\n\n\(result)")
             
         }
         
@@ -173,7 +173,7 @@ func testSets() {
             }
         
             assert(result != nil)
-            print("\(__FUNCTION__) passed with result:\n\(result!)")
+            print("\(#function) passed with result:\n\(result!)")
             
         }
         
@@ -185,11 +185,39 @@ func testSets() {
         testChallenge6()
         testChallenge7()
         testChallenge8()
+        
+        print("\(#function) passed.")
     }
 
-    testSet1()
+    func testSet2() {
+        
+        func testChallenge9() {
+            let original = "YELLOW SUBMARINE".asciiToBytes
+            assert(original.padToBlockLength(20) == original + [4, 4, 4, 4])
+            print("\(#function) passed.")
+        }
+        
+        func testChallenge10() {
+            
+
+
+
+            
+            
+            
+        }
+        
+        testChallenge9()
+        testChallenge10()
+        
+        print("\(#function) passed.")
+    }
     
-    print("\(__FUNCTION__) passed.")
+    testSet1()
+    testSet2()
+    
+    print("\(#function) passed.")
+    print("* All Set Tests passed. *")
     
 }
 

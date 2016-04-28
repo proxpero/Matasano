@@ -67,6 +67,6 @@ func testPlainTextScoring() {
     assert(encodingKey == key)
     assert(decrypted.asciiRepresentation == plaintext)
     
-    print("\(__FUNCTION__) passed.")
+    print("\(#function) passed.")
     
 }

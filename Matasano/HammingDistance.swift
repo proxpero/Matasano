@@ -36,5 +36,5 @@ func testHammingDistance() {
     assert(hammingDistance(b1, b2) == 4)
     assert(hammingDistance("this is a test", "wokka wokka!!!") == 37)
     
-    print("\(__FUNCTION__) passed.")
+    print("\(#function) passed.")
 }

@@ -51,7 +51,7 @@ func testRepeatingKey() {
     
     assert(decrypted.asciiRepresentation == verses)
     
-    print("\(__FUNCTION__) passed.")
+    print("\(#function) passed.")
     
 }
 

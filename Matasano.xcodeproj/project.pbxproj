@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5237D4251C7D2844000763D7 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5237D4231C7D2844000763D7 /* libcrypto.a */; };
-		5237D4261C7D2844000763D7 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5237D4241C7D2844000763D7 /* libssl.a */; };
 		5237D4281C7DF1F5000763D7 /* 7.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5237D4271C7DE446000763D7 /* 7.txt */; };
 		5237D42A1C7E1083000763D7 /* 8.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5237D4291C7E107B000763D7 /* 8.txt */; };
 		525A61871C77A03900E51ABF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61861C77A03900E51ABF /* main.swift */; };
@@ -23,6 +21,8 @@
 		525A61A11C77A0CC00E51ABF /* XOR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525A61981C77A0CC00E51ABF /* XOR.swift */; };
 		525A61A21C77A1A100E51ABF /* 4.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 525A618D1C77A0CC00E51ABF /* 4.txt */; };
 		525A61A31C77A1A500E51ABF /* 6.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 525A618E1C77A0CC00E51ABF /* 6.txt */; };
+		52FA88741C8F8827008A2635 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FA88731C8F8827008A2635 /* libcrypto.a */; };
+		52FA88761C8F9375008A2635 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FA88751C8F9375008A2635 /* libssl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,8 +43,6 @@
 
 /* Begin PBXFileReference section */
 		5237D41D1C7D182F000763D7 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
-		5237D4231C7D2844000763D7 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = lib/libcrypto.a; sourceTree = "<group>"; };
-		5237D4241C7D2844000763D7 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = lib/libssl.a; sourceTree = "<group>"; };
 		5237D4271C7DE446000763D7 /* 7.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 7.txt; sourceTree = "<group>"; };
 		5237D4291C7E107B000763D7 /* 8.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 8.txt; sourceTree = "<group>"; };
 		525A61831C77A03900E51ABF /* Matasano */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Matasano; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +58,9 @@
 		525A61961C77A0CC00E51ABF /* RepeatingKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatingKey.swift; sourceTree = "<group>"; };
 		525A61971C77A0CC00E51ABF /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		525A61981C77A0CC00E51ABF /* XOR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XOR.swift; sourceTree = "<group>"; };
+		52FA88721C8F860C008A2635 /* 10.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = 10.txt; sourceTree = "<group>"; };
+		52FA88731C8F8827008A2635 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = lib/libcrypto.a; sourceTree = "<group>"; };
+		52FA88751C8F9375008A2635 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = lib/libssl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5237D4261C7D2844000763D7 /* libssl.a in Frameworks */,
-				5237D4251C7D2844000763D7 /* libcrypto.a in Frameworks */,
+				52FA88761C8F9375008A2635 /* libssl.a in Frameworks */,
+				52FA88741C8F8827008A2635 /* libcrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,8 +79,8 @@
 		5237D41E1C7D23B2000763D7 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				5237D4231C7D2844000763D7 /* libcrypto.a */,
-				5237D4241C7D2844000763D7 /* libssl.a */,
+				52FA88731C8F8827008A2635 /* libcrypto.a */,
+				52FA88751C8F9375008A2635 /* libssl.a */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -119,6 +120,7 @@
 				525A618E1C77A0CC00E51ABF /* 6.txt */,
 				5237D4271C7DE446000763D7 /* 7.txt */,
 				5237D4291C7E107B000763D7 /* 8.txt */,
+				52FA88721C8F860C008A2635 /* 10.txt */,
 			);
 			path = Matasano;
 			sourceTree = "<group>";

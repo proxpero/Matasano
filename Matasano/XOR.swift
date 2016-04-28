@@ -43,7 +43,7 @@ func testXorInfixes() {
     
     assert(b1 == decoded)
     
-    print("\(__FUNCTION__) passed.")
+    print("\(#function) passed.")
     
 }
 

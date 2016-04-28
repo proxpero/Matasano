@@ -14,12 +14,6 @@ extension String {
         let content = try! NSString(contentsOfFile: filename, encoding: encoding)
         self = content as String
     }
-    
-    /// Where `self` is a valid hex string, returns `true` when a 16 byte block is repeated.
-//    var isECBEncrypted: Bool {
-//        
-//        
-//    }
 }
 
 extension CollectionType
@@ -55,6 +49,28 @@ extension CollectionType
             candidates.append(self.map { $0^UInt8(key) })
         }
         return candidates
+    }
+
+}
+
+extension MutableCollectionType where Generator.Element == UInt8 {
+    
+    func padToBlockLength(length: Int? = nil) -> Array<Generator.Element> {
+        
+        var result = Array<Generator.Element>(self)
+        let final: Int
+        if length == nil {
+            // if no length specified, then get the closest multiple of 16 above length.
+            final = (result.count/16 + 1) * 16
+        } else {
+            final = length!
+        }
+        
+        let pad = final - result.count
+        for _ in 1...pad {
+            result.append(UInt8(pad))
+        }
+        return result
     }
 }
 
@@ -115,7 +131,7 @@ func testTranspose() {
     assert(a3.transpose() == a1)
     assert(a1.transpose().transpose() == a1)
     
-    print("\(__FUNCTION__) passed.")
+    print("\(#function) passed.")
 }
 
 
@@ -164,7 +180,7 @@ func testBlockify() {
     assert(b1.blockify(3) == b2)
     assert(b1.blockify(5) == b3)
     
-    print("\(__FUNCTION__) passed.")
+    print("\(#function) passed.")
     
 }
 
